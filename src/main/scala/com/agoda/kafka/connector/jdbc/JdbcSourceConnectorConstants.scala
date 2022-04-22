@@ -7,6 +7,7 @@ object JdbcSourceConnectorConstants {
   val STORED_PROCEDURE_NAME_KEY           = "stored-procedure.name"
 
   val CONNECTION_URL_CONFIG               = "connection.url"
+  val CONNECTION_URL_CONFIG_DOC           = "JDBC connection URL.\n" + "For example: ``jdbc:oracle:thin:@localhost:1521:orclpdb1``, " + "``jdbc:mysql://localhost/db_name``, " + "``jdbc:sqlserver://localhost;instance=SQLEXPRESS;" + "databaseName=db_name``";
 
   val MODE_CONFIG                         = "mode"
   val TIMESTAMP_VARIABLE_NAME_CONFIG      = "timestamp.variable.name"

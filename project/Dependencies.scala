@@ -5,7 +5,7 @@ object Dependencies {
 
   private val LogBack             = "ch.qos.logback"              % "logback-classic" % "1.2.3"
   private val ScalaLogging        = "com.typesafe.scala-logging" %% "scala-logging"   % "3.5.0"
-  private val KafkaConnectApi     = "org.apache.kafka"            % "connect-api"     % "0.9.0.0"
+  private val KafkaConnectApi     = "org.apache.kafka"            % "connect-api"     % "2.5.1" //TODO was 0.9.0.0
   private val Enumeratum          = "com.beachape"               %% "enumeratum"      % "1.5.12"
   private val Scalatics           = "org.scalactic"              %% "scalactic"       % ScalaTestV  % "test"
   private val ScalaTest           = "org.scalatest"              %% "scalatest"       % ScalaTestV  % "test"
@@ -17,5 +17,12 @@ object Dependencies {
 
   object Test {
     def kafkaJdbcConnector = Seq(LogBack, ScalaLogging, Scalatics, ScalaTest, Mockito)
+  }
+}
+
+object PackagingTypePlugin extends AutoPlugin {
+  override val buildSettings = {
+    sys.props += "packaging.type" -> "jar"
+    Nil
   }
 }
